@@ -19,7 +19,7 @@ Deno.serve(async req=>{
    if(recent.length>=120)return json({error:'잠시 후 다시 도전해 주세요.'},429);
    const token=crypto.randomUUID()+crypto.randomUUID();
    const rows=await db('shape7_sessions',{method:'POST',body:JSON.stringify({name:b.name.trim(),token_hash:await hash(token),ip_hash})});
-   return json({id:rows[0].id,token});
+   return json({id:rows[0].id,token,card_order:rows[0].card_order});
   }
   if(!['answer','resume'].includes(b.action)||typeof b.id!=='string'||!/^[a-f0-9-]{36}$/.test(b.id)||typeof b.token!=='string'||b.token.length>100)return json({error:'올바르지 않은 요청이에요.'},400);
   const h=await hash(b.token);
@@ -28,7 +28,7 @@ Deno.serve(async req=>{
   if(!s.completed_at&&Date.now()-new Date(s.started_at).getTime()>86400000)return json({error:'도전 시간이 만료되었어요. 다시 시작해 주세요.'},410);
   if(b.action==='resume'){
    let rank=null;if(s.completed_at){const r=await fetch(base+'/rest/v1/shape7_sessions?select=id&completed_at=not.is.null&elapsed_ms=lt.'+s.elapsed_ms,{headers:{apikey:key,Authorization:'Bearer '+key,Prefer:'count=exact',Range:'0-0'}});if(!r.ok)throw Error('순위를 불러오지 못했어요.');rank=Number(r.headers.get('content-range')?.split('/')[1]||0)+1;}
-   return json({name:s.name,stage:s.stage,solved:s.solved,complete:!!s.completed_at,elapsed_ms:s.elapsed_ms??Date.now()-new Date(s.started_at).getTime(),rank});
+   return json({name:s.name,card_order:s.card_order,stage:s.stage,solved:s.solved,complete:!!s.completed_at,elapsed_ms:s.elapsed_ms??Date.now()-new Date(s.started_at).getTime(),rank});
   }
   if(!Number.isInteger(b.stage)||b.stage<0||b.stage>3||!Number.isInteger(b.row)||b.row<0||b.row>4||!Number.isInteger(b.card)||b.card<1||b.card>20)return json({error:'잘못된 정답 요청이에요.'},400);
   return json(await db('rpc/shape7_answer',{method:'POST',body:JSON.stringify({p_id:b.id,p_hash:h,p_stage:b.stage,p_row:b.row,p_card:b.card})}));
