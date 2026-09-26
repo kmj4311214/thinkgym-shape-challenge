@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">동 트로피</title>
+  <defs><linearGradient id="cup" x1="18" y1="12" x2="75" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="#ffd2a0"/><stop offset=".42" stop-color="#bd713c"/><stop offset="1" stop-color="#63331e"/></linearGradient><linearGradient id="base" x1="32" y1="70" x2="64" y2="91"><stop stop-color="#db9866"/><stop offset="1" stop-color="#5e3020"/></linearGradient></defs>
+  <path d="M29 17h38v13c0 17-7 29-19 34C36 59 29 47 29 30V17Z" fill="url(#cup)" stroke="#f5b780" stroke-width="2"/>
+  <path d="M29 25H17v8c0 12 7 21 19 22M67 25h12v8c0 12-7 21-19 22" fill="none" stroke="#a65d33" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 63v13M35 78h26l5 10H30l5-10Z" fill="url(#base)" stroke="#d98e5d" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="48" cy="38" r="11" fill="#e8aa7b" opacity=".96"/><text x="48" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="800" fill="#6c351f">3</text>
+</svg>

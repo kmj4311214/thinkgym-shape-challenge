@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">금 트로피</title>
+  <defs><linearGradient id="cup" x1="18" y1="12" x2="75" y2="82" gradientUnits="userSpaceOnUse"><stop stop-color="#fff2a8"/><stop offset=".42" stop-color="#e8b83e"/><stop offset="1" stop-color="#9a6010"/></linearGradient><linearGradient id="base" x1="32" y1="70" x2="64" y2="91"><stop stop-color="#f5d778"/><stop offset="1" stop-color="#8c5711"/></linearGradient></defs>
+  <path d="M29 17h38v13c0 17-7 29-19 34C36 59 29 47 29 30V17Z" fill="url(#cup)" stroke="#ffe898" stroke-width="2"/>
+  <path d="M29 25H17v8c0 12 7 21 19 22M67 25h12v8c0 12-7 21-19 22" fill="none" stroke="#dca72c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 63v13M35 78h26l5 10H30l5-10Z" fill="url(#base)" stroke="#f3cf63" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="48" cy="38" r="11" fill="#fff3b0" opacity=".92"/><path d="m48 29 2.7 5.5 6 .9-4.4 4.2 1.1 6-5.4-2.8-5.4 2.8 1.1-6-4.4-4.2 6-.9L48 29Z" fill="#bd7b10"/>
+</svg>
