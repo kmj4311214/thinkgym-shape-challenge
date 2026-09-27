@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "row": 0,
+    "column": 0,
+    "top": [
+      "red",
+      "triangle"
+    ],
+    "right": [
+      "purple",
+      "triangle"
+    ],
+    "bottom": [
+      "blue",
+      "triangle"
+    ],
+    "left": [
+      "yellow",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 2,
+    "row": 0,
+    "column": 1,
+    "top": [
+      "blue",
+      "triangle"
+    ],
+    "right": [
+      "purple",
+      "triangle"
+    ],
+    "bottom": [
+      "pink",
+      "semicircle"
+    ],
+    "left": [
+      "yellow",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 3,
+    "row": 0,
+    "column": 2,
+    "top": [
+      "green",
+      "semicircle"
+    ],
+    "right": [
+      "purple",
+      "triangle"
+    ],
+    "bottom": [
+      "green",
+      "triangle"
+    ],
+    "left": [
+      "yellow",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 4,
+    "row": 0,
+    "column": 3,
+    "top": [
+      "magenta",
+      "triangle"
+    ],
+    "right": [
+      "purple",
+      "triangle"
+    ],
+    "bottom": [
+      "purple",
+      "triangle"
+    ],
+    "left": [
+      "yellow",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 5,
+    "row": 1,
+    "column": 0,
+    "top": [
+      "red",
+      "triangle"
+    ],
+    "right": [
+      "red",
+      "semicircle"
+    ],
+    "bottom": [
+      "blue",
+      "triangle"
+    ],
+    "left": [
+      "magenta",
+      "triangle"
+    ]
+  },
+  {
+    "id": 6,
+    "row": 1,
+    "column": 1,
+    "top": [
+      "blue",
+      "triangle"
+    ],
+    "right": [
+      "red",
+      "semicircle"
+    ],
+    "bottom": [
+      "pink",
+      "semicircle"
+    ],
+    "left": [
+      "magenta",
+      "triangle"
+    ]
+  },
+  {
+    "id": 7,
+    "row": 1,
+    "column": 2,
+    "top": [
+      "green",
+      "semicircle"
+    ],
+    "right": [
+      "red",
+      "semicircle"
+    ],
+    "bottom": [
+      "green",
+      "triangle"
+    ],
+    "left": [
+      "magenta",
+      "triangle"
+    ]
+  },
+  {
+    "id": 8,
+    "row": 1,
+    "column": 3,
+    "top": [
+      "magenta",
+      "triangle"
+    ],
+    "right": [
+      "red",
+      "semicircle"
+    ],
+    "bottom": [
+      "purple",
+      "triangle"
+    ],
+    "left": [
+      "magenta",
+      "triangle"
+    ]
+  },
+  {
+    "id": 9,
+    "row": 2,
+    "column": 0,
+    "top": [
+      "red",
+      "triangle"
+    ],
+    "right": [
+      "pink",
+      "triangle"
+    ],
+    "bottom": [
+      "blue",
+      "triangle"
+    ],
+    "left": [
+      "purple",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 10,
+    "row": 2,
+    "column": 1,
+    "top": [
+      "blue",
+      "triangle"
+    ],
+    "right": [
+      "pink",
+      "triangle"
+    ],
+    "bottom": [
+      "pink",
+      "semicircle"
+    ],
+    "left": [
+      "purple",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 11,
+    "row": 2,
+    "column": 2,
+    "top": [
+      "green",
+      "semicircle"
+    ],
+    "right": [
+      "pink",
+      "triangle"
+    ],
+    "bottom": [
+      "green",
+      "triangle"
+    ],
+    "left": [
+      "purple",
+      "semicircle"
+    ]
+  },
+  {
+    "id": 12,
+    "row": 2,
+    "column": 3,
+    "top": [
+      "magenta",
+      "triangle"
+    ],
+    "right": [
+      "pink",
+      "triangle"
+    ],
+    "bottom": [
+      "purple",
+      "triangle"
+    ],
+    "left": [
+      "purple",
+      "semicircle"
+    ]
+  }
+]
