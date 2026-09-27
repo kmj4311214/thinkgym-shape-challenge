@@ -1,3 +1,4 @@
+import './sound.js';
 import {API_URL} from './config.js';
 import {ANSWERS,formatTime,validName,isCorrect,escapeHtml as esc} from './game.js';
 const app=document.querySelector('#app');

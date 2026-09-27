@@ -1,3 +1,4 @@
+import './sound.js';
 import {formatTime,validName,escapeHtml as esc} from './game.js';
 const API='https://derupekdpfitfcmutcxq.supabase.co/functions/v1/pumpkin-game';
 const KEY='thinkgym-pumpkin-session-v1';
