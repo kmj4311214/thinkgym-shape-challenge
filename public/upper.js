@@ -6,7 +6,7 @@ const app=document.querySelector('#app');
 let state=null,selected=null,busy=false,boardVersion=0;
 const ANSWERS=[8,12,1,4,7,11,9,3,6,10,2,5];
 const TOTAL=12;
-function face(id){return '<span class="face"><img class="upper-art" src="/assets/upper-piece-'+id+'.svg?v=222" alt="네 방향 도형 조합 카드" draggable="false"></span>'}
+function face(id){return '<span class="face"><img class="upper-art" src="/assets/upper-piece-'+id+'.svg?v=board-colors-1" alt="네 방향 도형 조합 카드" draggable="false"></span>'}
 function trophy(rank,cls='rank-trophy'){return rank>=1&&rank<=3?'<img class="'+cls+'" src="/assets/trophy-'+['gold','silver','bronze'][rank-1]+'.svg" alt="'+['금','은','동'][rank-1]+' 트로피">':''}
 async function api(action,data={}){const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),15000);try{const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,...data}),signal:controller.signal});const result=await res.json();if(!res.ok)throw Error(result.error||'기록을 저장하지 못했어요.');return result}catch(e){if(e.name==='AbortError')throw Error('연결이 늦어지고 있어요. 다시 시도해 주세요.');throw e}finally{clearTimeout(timeout)}}
 function persist(){try{sessionStorage.setItem(KEY,JSON.stringify(state))}catch{}}
