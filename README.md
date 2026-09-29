@@ -49,3 +49,14 @@ https://thinkgym-shape-challenge.vercel.app
 ## 무작위 카드 배치
 
 새 게임 시작마다 Supabase에서 카드 20개를 무작위로 섞어 `shape7_sessions.card_order`에 저장합니다. 같은 게임의 정답 처리·단계 전환·새로고침에서는 배치를 유지합니다. 화면의 카드 번호는 현재 위치이며 원본 정답 번호를 노출하지 않습니다. 기존 데이터베이스 업데이트용 SQL은 `shuffle-cards.sql`입니다.
+
+## Administrator and audio
+
+- `/admin.html` prefills the administrator username only. The password is entered by the operator.
+- `thinkgym-admin` is a Supabase Edge Function with custom authentication: PBKDF2-SHA256 password verification, hashed one-hour bearer sessions, per-IP login throttling, and revoked-session checks on every protected operation.
+- `admin-schema.sql` adds service-role-only tables and functions. Provision the salted password hash separately; credentials are never included in repository files or public assets.
+- The dashboard lists all completed records in pages of 50, preserving tied ranks. Individual deletion targets an explicit record/program. Reset runs atomically across the four active game tables and only removes completions at or before the displayed snapshot; in-progress sessions are preserved.
+- Background audio is an original Web Audio melody. Browser autoplay rules may require a first click; the sound preference and melody position persist between same-tab pages. Hidden pages stop audio and the existing completion fanfare takes priority.
+- Back navigation leads to the parent age/grade selection page. The supplied partner logos are original unmodified PNG files.
+
+Validation: existing game tests pass; live admin API verified wrong-password rejection, unauthenticated-delete rejection, all four record lists, deletion of a dedicated test record, confirmation enforcement, logout and revoked-token rejection. Whole-reset behavior was checked with four old-dated test records inside a rolled-back transaction, without changing children's records.
