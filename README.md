@@ -49,6 +49,14 @@ Vercel의 Other 프레임워크, 빌드 명령 없음, 출력 디렉터리 `publ
 - Admin listing, individual deletion and atomic reset include the fifth game table. Deploy the packing schema before the updated admin schema and edge function.
 - Run `npm test` for the original puzzle and packing geometry checks.
 
+## Age seven shape separation
+
+- `/seven-programs.html` offers the existing color-combination assessment and new `/layers.html` assessment.
+- `layers-question.png` and `layers-answers.png` preserve the supplied 1.png and 2.png. CSS viewports show each of the five answer cards separately; the solution image is not published.
+- `layers-schema.sql` keeps the answer mapping server-side, validates all five matches, and stores server-timed results. The frontend only receives cards already solved by the player.
+- `layers-game` provides shuffled choices, resume, and a separate leaderboard. Admin management includes `layers_sessions` as the sixth assessment.
+- Verified all 25 row/card combinations and complete progress in a rolled-back database test.
+
 ## 운영 주소
 
 https://thinkgym-shape-challenge.vercel.app

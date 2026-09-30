@@ -37,6 +37,7 @@ begin
  delete from public.shape7_sessions where completed_at<=p_before; get diagnostics n=row_count; total:=total+n;
  delete from public.upper_v2_sessions where completed_at<=p_before; get diagnostics n=row_count; total:=total+n;
  delete from public.packing_sessions where completed_at<=p_before; get diagnostics n=row_count; total:=total+n;
+ delete from public.layers_sessions where completed_at<=p_before; get diagnostics n=row_count; total:=total+n;
  return total;
 end $$;
 revoke all on function public.thinkgym_admin_attempt(text),public.thinkgym_admin_reset(timestamptz) from public,anon,authenticated;
@@ -46,7 +47,7 @@ create or replace function public.thinkgym_admin_list(p_program text,p_offset in
 language plpgsql security invoker set search_path='' as $$
 declare target text; result jsonb;
 begin
- target:=case p_program when 'pumpkin' then 'pumpkin_sessions' when 'rings' then 'rings_sessions' when 'shape7' then 'shape7_sessions' when 'upper' then 'upper_v2_sessions' when 'packing' then 'packing_sessions' end;
+ target:=case p_program when 'pumpkin' then 'pumpkin_sessions' when 'rings' then 'rings_sessions' when 'shape7' then 'shape7_sessions' when 'upper' then 'upper_v2_sessions' when 'packing' then 'packing_sessions' when 'layers' then 'layers_sessions' end;
  if target is null or p_offset<0 or p_offset>100000 then raise exception 'Invalid program'; end if;
  execute format('select coalesce(jsonb_agg(r),''[]''::jsonb) from (select id,name,elapsed_ms,completed_at,rank() over(order by elapsed_ms) as rank from public.%I where completed_at is not null order by elapsed_ms,completed_at,id limit 50 offset $1) r',target) into result using p_offset;
  return result;
