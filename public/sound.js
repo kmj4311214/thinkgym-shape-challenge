@@ -80,7 +80,7 @@ window.addEventListener('pagehide',pauseMusic);
 // Same-site visits may already have autoplay permission; otherwise resume waits for a click.
 unlockMusic();
 
-const parentPaths={'/preschool56.html':'/preschool.html','/preschool7.html':'/preschool.html','/elementary.html':'/elementary-programs.html','/upper.html':'/upper-programs.html','/packing.html':'/upper-programs.html','/upper-programs.html':'/elementary-programs.html'};
+const parentPaths={'/preschool56.html':'/preschool.html','/preschool7.html':'/seven-programs.html','/layers.html':'/seven-programs.html','/seven-programs.html':'/preschool.html','/elementary.html':'/elementary-programs.html','/upper.html':'/upper-programs.html','/packing.html':'/upper-programs.html','/upper-programs.html':'/elementary-programs.html'};
 const navigation=document.createElement('nav');navigation.className='page-navigation';navigation.setAttribute('aria-label','페이지 이동');
 if(location.pathname!=='/'&&location.pathname!=='/index.html'){
  const back=document.createElement('a');back.href=parentPaths[location.pathname]||'/';back.textContent='← 뒤로 가기';navigation.append(back);
