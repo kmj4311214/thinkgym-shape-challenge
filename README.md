@@ -40,6 +40,15 @@ Vercel의 Other 프레임워크, 빌드 명령 없음, 출력 디렉터리 `publ
 원본 문제와 정답 이미지의 THINK GYM 표시를 유지했습니다.
 
 
+## Upper elementary packing puzzle
+
+- `/upper-programs.html` offers the existing four-direction puzzle and the new `/packing.html` 5×5 packing puzzle.
+- Seven original fixed-orientation pieces support tap-to-place, pointer dragging, repositioning, removal, and local session recovery. The first occupied cell in the top row is the tap anchor.
+- All seven pieces must cover 25 cells without overlaps or out-of-bounds cells. Every valid tiling is accepted; the reference solution is not shipped to the game page.
+- `packing-schema.sql` and `packing-edge.ts` provide server-timed completion, idempotent submission, shuffled card order, a separate leaderboard, and service-only database access.
+- Admin listing, individual deletion and atomic reset include the fifth game table. Deploy the packing schema before the updated admin schema and edge function.
+- Run `npm test` for the original puzzle and packing geometry checks.
+
 ## 운영 주소
 
 https://thinkgym-shape-challenge.vercel.app
