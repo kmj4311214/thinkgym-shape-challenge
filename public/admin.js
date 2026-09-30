@@ -1,5 +1,5 @@
 const API='https://derupekdpfitfcmutcxq.supabase.co/functions/v1/thinkgym-admin';
-const $=s=>document.querySelector(s),names={pumpkin:'유아 5·6세',rings:'유아 7세',shape7:'초등 저학년',upper:'초등 고학년'};
+const $=s=>document.querySelector(s),names={pumpkin:'유아 5·6세',rings:'유아 7세',shape7:'초등 저학년',upper:'초등 고학년 · 네 방향',packing:'초등 고학년 · 25칸'};
 let token=sessionStorage.getItem('thinkgym-admin-token')||'',offset=0,total=0,snapshot='',busy=false,version=0;
 const message=t=>{$('#message').textContent=t};
 function loginView(){token='';sessionStorage.removeItem('thinkgym-admin-token');$('#dashboard').hidden=true;$('#login-panel').hidden=false;$('#password').value='';version++}
@@ -12,5 +12,5 @@ async function remove(program,row){if(busy||!await confirmAction('이 기록을 
 $('#login-form').onsubmit=async event=>{event.preventDefault();const submit=event.submitter;submit.disabled=true;message('로그인 중입니다.');try{const data=await api('login',{username:$('#username').value.trim(),password:$('#password').value});token=data.token;sessionStorage.setItem('thinkgym-admin-token',token);$('#password').value='';$('#login-panel').hidden=true;$('#dashboard').hidden=false;await load()}catch(e){message(e.message)}finally{submit.disabled=false}};
 $('#logout').onclick=async()=>{try{await api('logout');loginView();message('로그아웃되었습니다.')}catch(e){message(e.message)}};
 $('#program').onchange=()=>{offset=0;load()};$('#refresh').onclick=()=>load();$('#previous').onclick=()=>{offset=Math.max(0,offset-50);load()};$('#next').onclick=()=>{offset+=50;load()};
-$('#reset').onclick=async()=>{if(busy||!snapshot||!await confirmAction('전체 순위를 초기화할까요?','네 프로그램의 완료 기록을 모두 삭제합니다. 되돌릴 수 없습니다. 현재 진행 중인 도전과 이 화면을 불러온 이후 완료한 기록은 유지됩니다.',true))return;lock(true);try{const data=await api('reset',{confirm:'전체 초기화',before:snapshot});offset=0;await load();message(data.deleted+'개의 완료 기록을 삭제했습니다.')}catch(e){message(e.message)}finally{lock(false)}};
+$('#reset').onclick=async()=>{if(busy||!snapshot||!await confirmAction('전체 순위를 초기화할까요?','모든 프로그램의 완료 기록을 모두 삭제합니다. 되돌릴 수 없습니다. 현재 진행 중인 도전과 이 화면을 불러온 이후 완료한 기록은 유지됩니다.',true))return;lock(true);try{const data=await api('reset',{confirm:'전체 초기화',before:snapshot});offset=0;await load();message(data.deleted+'개의 완료 기록을 삭제했습니다.')}catch(e){message(e.message)}finally{lock(false)}};
 if(token){$('#login-panel').hidden=true;$('#dashboard').hidden=false;load()}
