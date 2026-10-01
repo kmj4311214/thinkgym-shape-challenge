@@ -1,5 +1,5 @@
 const API='https://derupekdpfitfcmutcxq.supabase.co/functions/v1/thinkgym-admin';
-const $=s=>document.querySelector(s),names={pumpkin:'유아 5·6세',rings:'유아 7세 · 색 조합',layers:'유아 7세 · 도형 나누기',shape7:'초등 저학년',upper:'초등 고학년 · 네 방향',packing:'초등 고학년 · 25칸'};
+const $=s=>document.querySelector(s),names={pumpkin:'유아 5·6세 · 호박',animals:'유아 5·6세 · 동물',rings:'유아 7세 · 색 조합',layers:'유아 7세 · 도형 나누기',shape7:'초등 저학년',upper:'초등 고학년 · 네 방향',packing:'초등 고학년 · 25칸'};
 let token=sessionStorage.getItem('thinkgym-admin-token')||'',offset=0,total=0,snapshot='',busy=false,version=0;
 const message=t=>{$('#message').textContent=t};
 function loginView(){token='';sessionStorage.removeItem('thinkgym-admin-token');$('#dashboard').hidden=true;$('#login-panel').hidden=false;$('#password').value='';version++}
