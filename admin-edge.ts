@@ -2,7 +2,7 @@ const base=Deno.env.get('SUPABASE_URL')!;
 const key=Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const origin='https://thinkgym-shape-challenge.vercel.app';
 const cors={'Access-Control-Allow-Origin':origin,'Access-Control-Allow-Headers':'content-type,authorization','Access-Control-Allow-Methods':'POST, OPTIONS','Cache-Control':'no-store','Vary':'Origin'};
-const tables:Record<string,string>={pumpkin:'pumpkin_sessions',rings:'rings_sessions',shape7:'shape7_sessions',upper:'upper_v2_sessions',packing:'packing_sessions',layers:'layers_sessions'};
+const tables:Record<string,string>={pumpkin:'pumpkin_sessions',rings:'rings_sessions',shape7:'shape7_sessions',upper:'upper_v2_sessions',packing:'packing_sessions',layers:'layers_sessions',animals:'animals_sessions'};
 const hex=(a:ArrayBuffer)=>Array.from(new Uint8Array(a),n=>n.toString(16).padStart(2,'0')).join('');
 const hash=async(s:string)=>hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)));
 const json=(data:unknown,status=200)=>new Response(JSON.stringify(data),{status,headers:{...cors,'Content-Type':'application/json'}});
